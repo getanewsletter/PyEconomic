@@ -19,7 +19,7 @@ class PyEconomic:
 
 
     def __init__(self, agreement_id, user_id, password, wsdl_url):
-        self.client = Client(wsdl_url, headers={'Content-Type': 'text/xml; charset=utf-8'})
+        self.client = Client(wsdl_url, headers={'Content-Type': 'text/xml; charset=utf-8','X-EconomicAppIdentifier': 'PyEconomic/1.0 (https://github.com/getanewsletter/PyEconomic/; tech@getanewsletter.com) BasedOnSoap'})
         self.client.service.Connect(agreementNumber = agreement_id, userName = user_id, password = password)
 
     def call(self, soap_method_name, **kwargs):
